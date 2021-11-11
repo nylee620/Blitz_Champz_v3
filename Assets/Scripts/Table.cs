@@ -164,6 +164,7 @@ public class Table : MonoBehaviourPun
     }
     public void DrawCard() //possibly add argument to be passed for how many cards are to be drawn
     {// this comment is only to test the dummy branch
+    //test 2
         Debug.Log("Drawing card now");
         int nextCardToDraw = GameObject.FindWithTag("DeckObject").GetComponent<Deck>().deckIndex;
         Debug.Log("Cards in deck " + GameObject.FindWithTag("DeckObject").transform.childCount);
