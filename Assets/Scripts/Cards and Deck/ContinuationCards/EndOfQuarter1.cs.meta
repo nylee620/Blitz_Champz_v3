@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9118e25334f52a14291dc1691148db94
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - timer: {instanceID: 0}
+  - handArea: {instanceID: 0}
+  - endOfQuarter1Prefab: {fileID: 9004961768627143940, guid: cb13057baad26c8478925e68d6e84e12,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

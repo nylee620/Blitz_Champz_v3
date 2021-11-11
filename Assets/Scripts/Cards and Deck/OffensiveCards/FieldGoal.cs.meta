@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7213d90435ae8fe4dbb83a84123a33f1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - timer: {instanceID: 0}
+  - handArea: {instanceID: 0}
+  - fieldGoalPrefab: {fileID: 5864163953928299086, guid: ba75aec362e5dcc4bb7d2428440feec3,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

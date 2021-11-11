@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6865c4bb3e9d03d48b64a762f39add6d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - timer: {instanceID: 0}
+  - handArea: {instanceID: 0}
+  - blitzPrefab: {fileID: 5462107568122526994, guid: 20286c62737ec294dacafb819b8d8b4b,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

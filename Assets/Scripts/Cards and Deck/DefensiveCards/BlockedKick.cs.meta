@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ef74e2e61268d2f41bd601e23c1a7a6a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - timer: {instanceID: 0}
+  - handArea: {instanceID: 0}
+  - blockedKickPrefab: {fileID: 3658628421513144642, guid: 5452db3e3c6d8914b80833b557b64f0a,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 176d137205982f445b5fb587ed163413
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - hailMaryPrefab: {fileID: 8437827664905744862, guid: 0024d50e0ebe0fe4793aafbf84f6ca72,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6f15a9691e1dc9446954ad1d88681687
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - timer: {instanceID: 0}
+  - handArea: {instanceID: 0}
+  - passingTDPrefab: {fileID: 2882236536277464996, guid: 8f93244915f1d7f42b05aabb66f8090e,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
