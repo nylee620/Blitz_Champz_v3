@@ -172,6 +172,18 @@ public class Table : MonoBehaviourPun
         GameObject.FindWithTag("DeckObject").GetComponent<Deck>().deckIndex++;
     }
 
+    public void DrawCard(int number) // to be used with the Continuation Cards
+    {
+        for (int i = 0; i < number; i++)
+        {
+            Debug.Log("Drawing card now");
+            int nextCardToDraw = GameObject.FindWithTag("DeckObject").GetComponent<Deck>().deckIndex;
+            Debug.Log("Cards in deck " + GameObject.FindWithTag("DeckObject").transform.childCount);
+            myGamePlayer.AddCard(GameObject.FindWithTag("DeckObject").transform.GetChild(nextCardToDraw).gameObject);
+            GameObject.FindWithTag("DeckObject").GetComponent<Deck>().deckIndex++;
+        }
+    }
+
     public void Deal()
     {
         Debug.Log("Dealing Cards");
