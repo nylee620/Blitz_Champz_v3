@@ -151,7 +151,9 @@ public class Table : MonoBehaviourPun
     public void ShuffleDeck()
     {
         Debug.Log("Shuffling Deck");
-        deck = deck.OrderBy(Matrix4x4 => UnityEngine.Random.value).ToList(); //poor complexity but with only 100 items it *should* be okay
+        //deck = deck.OrderBy(Matrix4x4 => UnityEngine.Random.value).ToList(); //poor complexity but with only 100 items it *should* be okay
+        // Use LINQ algorithm to shuffle a deck 
+        deck = deck.OrderBy(i => Guid.NewGuid()).ToList();
     }
 
     public void InstantiateDeckToPhoton()
