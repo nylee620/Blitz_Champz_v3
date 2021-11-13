@@ -210,6 +210,12 @@ public class Table : MonoBehaviourPun
             myGamePlayer.AddCard(GameObject.FindWithTag("DeckObject").transform.GetChild(nextCardToDraw).gameObject);
             GameObject.FindWithTag("DeckObject").GetComponent<Deck>().deckIndex++;
         }
+        // add one more card to player#1 (first player to play) since the player need to draw one more card when the game starts
+        if (PhotonNetwork.IsMasterClient)
+        {
+            DrawCard();
+        }
+
         AdvanceTurn();
     }
 
