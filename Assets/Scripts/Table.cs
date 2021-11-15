@@ -174,6 +174,18 @@ public class Table : MonoBehaviourPun
         GameObject.FindWithTag("DeckObject").GetComponent<Deck>().deckIndex++;
     }
 
+    public void DrawCard(int number) // to be used with the Continuation Cards
+    {
+        for (int i = 0; i < number; i++)
+        {
+            Debug.Log("Drawing card now");
+            int nextCardToDraw = GameObject.FindWithTag("DeckObject").GetComponent<Deck>().deckIndex;
+            Debug.Log("Cards in deck " + GameObject.FindWithTag("DeckObject").transform.childCount);
+            myGamePlayer.AddCard(GameObject.FindWithTag("DeckObject").transform.GetChild(nextCardToDraw).gameObject);
+            GameObject.FindWithTag("DeckObject").GetComponent<Deck>().deckIndex++;
+        }
+    }
+
     public void Deal()
     {
         Debug.Log("Dealing Cards");
@@ -198,6 +210,12 @@ public class Table : MonoBehaviourPun
             myGamePlayer.AddCard(GameObject.FindWithTag("DeckObject").transform.GetChild(nextCardToDraw).gameObject);
             GameObject.FindWithTag("DeckObject").GetComponent<Deck>().deckIndex++;
         }
+        // add one more card to player#1 (first player to play) since the player need to draw one more card when the game starts
+        if (PhotonNetwork.IsMasterClient)
+        {
+            DrawCard();
+        }
+
         AdvanceTurn();
     }
 
