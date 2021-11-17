@@ -32,7 +32,21 @@ MonoBehaviour:
   EnableSupportLogger: 0
   RunInBackground: 1
   StartInOfflineMode: 0
-  RpcList: []
+  RpcList:
+  - AddCard
+  - Advance
+  - ClickRpc
+  - DestroyRpc
+  - DestroySpaceship
+  - Discard
+  - Fire
+  - OrderCards
+  - Play
+  - Reclaim
+  - RespawnSpaceship
+  - Show
+  - SyncTable
+  - UpdateTable
   DisableAutoOpenWizard: 1
-  ShowSettings: 0
+  ShowSettings: 1
   DevRegionSetOnce: 1
