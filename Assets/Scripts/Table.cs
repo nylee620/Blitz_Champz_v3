@@ -151,7 +151,9 @@ public class Table : MonoBehaviourPun
     public void ShuffleDeck()
     {
         Debug.Log("Shuffling Deck");
-        deck = deck.OrderBy(Matrix4x4 => UnityEngine.Random.value).ToList(); //poor complexity but with only 100 items it *should* be okay
+        //deck = deck.OrderBy(Matrix4x4 => UnityEngine.Random.value).ToList(); //poor complexity but with only 100 items it *should* be okay
+        // Use LINQ algorithm to shuffle a deck 
+        deck = deck.OrderBy(i => Guid.NewGuid()).ToList();
     }
 
     public void InstantiateDeckToPhoton()
@@ -169,6 +171,18 @@ public class Table : MonoBehaviourPun
         Debug.Log("Cards in deck " + GameObject.FindWithTag("DeckObject").transform.childCount);
         myGamePlayer.AddCard(GameObject.FindWithTag("DeckObject").transform.GetChild(nextCardToDraw).gameObject);
         GameObject.FindWithTag("DeckObject").GetComponent<Deck>().deckIndex++;
+    }
+
+    public void DrawCard(int number) // to be used with the Continuation Cards
+    {
+        for (int i = 0; i < number; i++)
+        {
+            Debug.Log("Drawing card now");
+            int nextCardToDraw = GameObject.FindWithTag("DeckObject").GetComponent<Deck>().deckIndex;
+            Debug.Log("Cards in deck " + GameObject.FindWithTag("DeckObject").transform.childCount);
+            myGamePlayer.AddCard(GameObject.FindWithTag("DeckObject").transform.GetChild(nextCardToDraw).gameObject);
+            GameObject.FindWithTag("DeckObject").GetComponent<Deck>().deckIndex++;
+        }
     }
 
     public void Deal()
@@ -195,6 +209,12 @@ public class Table : MonoBehaviourPun
             myGamePlayer.AddCard(GameObject.FindWithTag("DeckObject").transform.GetChild(nextCardToDraw).gameObject);
             GameObject.FindWithTag("DeckObject").GetComponent<Deck>().deckIndex++;
         }
+        // add one more card to player#1 (first player to play) since the player need to draw one more card when the game starts
+        if (PhotonNetwork.IsMasterClient)
+        {
+            DrawCard();
+        }
+
         AdvanceTurn();
     }
 
