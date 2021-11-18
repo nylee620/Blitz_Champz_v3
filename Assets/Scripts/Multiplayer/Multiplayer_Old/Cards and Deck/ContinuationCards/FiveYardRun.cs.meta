@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e5519c0fb6e720c4cbf79d651f78c7ef
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - timer: {instanceID: 0}
+  - handArea: {instanceID: 0}
+  - fiveYardRunPrefab: {fileID: 7821325495265805843, guid: 976fef7e80b959549b165b992c9d5f4f,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

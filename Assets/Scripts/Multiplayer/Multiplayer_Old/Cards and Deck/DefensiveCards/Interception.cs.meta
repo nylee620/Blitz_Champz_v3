@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0c39a50d7fc30de47a703aea66177445
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - timer: {instanceID: 0}
+  - handArea: {instanceID: 0}
+  - interceptionPrefab: {fileID: 7293317386146942559, guid: 4b5a32552a14f9d4b93a0f08752d3d3c,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

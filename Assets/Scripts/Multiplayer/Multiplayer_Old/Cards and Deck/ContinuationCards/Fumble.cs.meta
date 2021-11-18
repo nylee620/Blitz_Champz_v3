@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b00a46ba46c52d643b82eaf995d87024
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - timer: {instanceID: 0}
+  - handArea: {instanceID: 0}
+  - fumblePrefab: {fileID: 3714073648251131163, guid: 18e2243450849db469b5b3a9406732fe,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

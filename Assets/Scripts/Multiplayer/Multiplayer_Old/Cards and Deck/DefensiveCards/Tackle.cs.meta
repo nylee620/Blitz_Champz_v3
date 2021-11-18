@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a4ebb1ef29896d340806b644e822698a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - timer: {instanceID: 0}
+  - handArea: {instanceID: 0}
+  - tacklePrefab: {fileID: 110347483301249816, guid: 06178d3255e3efc4fb890460a0f8d961,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

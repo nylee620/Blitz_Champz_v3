@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8c78d58ea5d4bca4ebc90830c71d5481
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - timer: {instanceID: 0}
+  - myHandArea: {fileID: 2745408218939880053, guid: ac7e5c29bbc894f44a4d1908ef1cd902,
+      type: 3}
+  - opponentHandArea: {fileID: 8835964672777241929, guid: 05f5f1e229e99ad4ca4cae6b0c251f8c,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

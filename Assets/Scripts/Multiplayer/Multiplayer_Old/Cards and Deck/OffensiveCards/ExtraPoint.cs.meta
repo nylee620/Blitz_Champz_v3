@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 35b443194b555394f9403854c11bf4dd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - timer: {instanceID: 0}
+  - handArea: {instanceID: 0}
+  - extraPointPrefab: {fileID: 6621249227917358836, guid: 8d0a14ee407d1c544b7005db7dc37260,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

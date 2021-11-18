@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b47d6a5cf7b6bb8408e68308ca457c97
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - timer: {instanceID: 0}
+  - handArea: {instanceID: 0}
+  - rushingTDPrefab: {fileID: 2047188245796181244, guid: 279415f276b0c234e82dea1fd9552acf,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

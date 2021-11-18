@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e7ce5d30405b08c438b01aafb9945144
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - timer: {instanceID: 0}
+  - handArea: {instanceID: 0}
+  - passCompletionPrefab: {fileID: 1241550133107446367, guid: 50f8d08256cd81a45935cf9fb30d75e8,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
