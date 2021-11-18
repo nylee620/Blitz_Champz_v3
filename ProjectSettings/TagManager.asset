@@ -8,6 +8,26 @@ TagManager:
   - DeckObject
   - HomePlayed
   - AwayPlayed
+  - Pscore
+  - Escore
+  - Canvas
+  - Manager
+  - 1
+  - 2
+  - 3
+  - 6
+  - 8
+  - PlayerArea
+  - PlayerScored
+  - AIScored
+  - Discard Pile
+  - console
+  - PlayerLoss
+  - discard
+  - audio
+  - lobby counter
+  - punlobby
+  - publicgamecount
   layers:
   - Default
   - TransparentFX

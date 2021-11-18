@@ -17,7 +17,7 @@ GameObject:
   m_Layer: 5
   m_Name: PassingTD
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: 7577490725193224ab7fd64fc95611a7, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
