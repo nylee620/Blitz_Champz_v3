@@ -1,0 +1,41 @@
+fileFormatVersion: 2
+guid: a02f547e1cdf6914ea86c85c19d1324c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - SPTackle: {fileID: 3135365417356212845, guid: 8dcd5dc701de5c54c949b5cd8952a281,
+      type: 3}
+  - SPInterception: {fileID: 5353179189806805827, guid: 9d5c45d825461d6438aa843b317007f5,
+      type: 3}
+  - SPBlocked_Kick: {fileID: 5805036661342699803, guid: 9c569067f97abd542a8dd6b0f011015f,
+      type: 3}
+  - SPBlitz: {fileID: 2094268324149404609, guid: a900ed18958a8d840adc1b5b7e5821ef,
+      type: 3}
+  - SPFumble: {fileID: 2280349255064901298, guid: 6158c52aa290ddf4aa269979ba1621a7,
+      type: 3}
+  - SPPass_Completion: {fileID: 3438399970322162971, guid: bd721b8d5f4db124ea7ad6bd8bf21747,
+      type: 3}
+  - SPFirst_Down: {fileID: 1213257675118520560, guid: e67a3c58e98e2944d8742434dd54ae47,
+      type: 3}
+  - SP5Yard_Run: {fileID: 8527713200946677866, guid: d6697ba09f9fd454691957720d03304b,
+      type: 3}
+  - SPConversion: {fileID: 4904883566393632472, guid: 6b6fa1cabaaec0d45b901fdbed0c0ac0,
+      type: 3}
+  - SPField_Goal: {fileID: 4266169448616180765, guid: bb38622c2a9766140bb28e3980d777af,
+      type: 3}
+  - SPExtra_Point: {fileID: 3359757848245021524, guid: 909f3f73089fb6c46bf939ef1e901d86,
+      type: 3}
+  - SPHail_Mary: {fileID: 2528832507888750782, guid: f9241aede70976445bad0922c2031f29,
+      type: 3}
+  - SPPassing_TD: {fileID: 2967464334891847294, guid: 37f80eaf9374a5b40a38c8f57a6de93d,
+      type: 3}
+  - SPRushin_TD: {fileID: 3268952216479146154, guid: b573200f49d9d9247bf6fab562f0f5c4,
+      type: 3}
+  - SPEnd_Of_Quarter: {fileID: 6953218889702276016, guid: 706db6f03c16710458086e9f9a6c8f33,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
