@@ -181,6 +181,21 @@ public class GameTable : MonoBehaviourPun
 
     }
 
+    void AssignViewSpecific()
+    {
+        //test
+        foreach (Player player in PhotonNetwork.PlayerList)
+        {
+            if (player == PhotonNetwork.LocalPlayer)
+            {
+               // localPlayer.text = player.NickName;
+            }
+            else
+            {
+               // remotePlayer.text = player.NickName;
+            }
+        }
+    }
 
 
     private void Create_Players()
@@ -323,16 +338,39 @@ public class GameTable : MonoBehaviourPun
         if (blitzPlayer1.score >= 21 && !currentBlitzPlayer.StopWin() )
         {
 
-            gameOver.SetActive(true);
-            gameOver.GetComponentInChildren<TextMeshProUGUI>().text = "Player 1 wins!";
 
+            Debug.Log("bP1.score>=21 ");
+
+            if (PhotonNetwork.IsMasterClient == true)
+            {
+                gameVic.SetActive(true);
+                gameVic.GetComponentInChildren<TextMeshProUGUI>().text = "You Won!";
+
+            }
+            else
+            {
+                gameOver.SetActive(true);
+                gameOver.GetComponentInChildren<TextMeshProUGUI>().text = "You Lost";
+
+            }
 
 
         }
         else if (blitzPlayer2.score >= 21 && !currentBlitzPlayer.StopWin() )
         {
-            gameOver.SetActive(true);
-            gameOver.GetComponentInChildren<TextMeshProUGUI>().text = "Player 2 wins!";
+            Debug.Log("bP2.score>=21 ");
+            if (PhotonNetwork.IsMasterClient == false)
+            {
+                gameVic.SetActive(true);
+                gameVic.GetComponentInChildren<TextMeshProUGUI>().text = "You Won!";
+            }
+            else
+            {
+                gameOver.SetActive(true);
+                gameOver.GetComponentInChildren<TextMeshProUGUI>().text = "You Lost";
+
+            }
+
         }
         else if (blitzPlayer3 && blitzPlayer3.score >= 21 && !currentBlitzPlayer.StopWin())
         {
