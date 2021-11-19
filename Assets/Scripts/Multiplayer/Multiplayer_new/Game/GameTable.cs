@@ -58,7 +58,7 @@ public class GameTable : MonoBehaviourPun
                 if (photonPlayerNode.Value == PhotonNetwork.LocalPlayer)
                 {
                     Debug.Log("This player equals this player");
-                    GameObject instancedPhotonPlayer = PhotonNetwork.Instantiate("player", new Vector3(-8f, -4.4f, 1f), transform.rotation);
+                    GameObject instancedPhotonPlayer = PhotonNetwork.Instantiate("player", new Vector3(-8f, -3.6f, 1f), transform.rotation);
                     blitzPlayer1 = instancedPhotonPlayer.GetComponent<BlitzPlayer>();
                     listBlitzPlayers.AddLast(blitzPlayer1);
                     blitzPlayer1.table = this;
@@ -70,7 +70,7 @@ public class GameTable : MonoBehaviourPun
                         if (b == 0)
                         {
                             Debug.Log("blitzPlayer2 obj - ref 9912894781");
-                            GameObject player2_object = PhotonNetwork.Instantiate("player", new Vector3(-8f, 3.4f, 1f), Quaternion.Euler(0, 0, 180f));
+                            GameObject player2_object = PhotonNetwork.Instantiate("player", new Vector3(-8f, 3.2f, 1f), Quaternion.Euler(0, 0, 180f));
                             blitzPlayer2 = player2_object.GetComponent<BlitzPlayer>();
                             listBlitzPlayers.AddLast(blitzPlayer2);
                             blitzPlayer2.table = this;
