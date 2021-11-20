@@ -29,9 +29,6 @@ public class NetworkController : MonoBehaviourPunCallbacks
     {
         Debug.Log("NetworkController_Start.CS");
         ConnectedUsingSettings = PhotonNetwork.ConnectUsingSettings();
-
-        print(PhotonNetwork.CountOfPlayersOnMaster + ": Start Amount of Users In PUN Lobby");
-        //Mh- my fix code for pun error on while connected
         if (ConnectedUsingSettings == false)
         {
             //every connection after the first time connection (Used to handle the already connected status)
@@ -57,22 +54,30 @@ public class NetworkController : MonoBehaviourPunCallbacks
         connectedImage.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
         connectedText.GetComponent<Text>().text = "Connected"; //final output
 
+  
     }
 
     public override void OnDisconnected(DisconnectCause cause)
     {
-        //    public override void OnDisconnected(DisconnectCause cause)
         connectedImage.GetComponent<Image>().color = new Color32(255, 0, 0, 255);
         connectedText.GetComponent<Text>().text = "Disconnected";
 
     }
 
 
+    public void ResetPunConnection()
+    {
+       
+        PhotonNetwork.Disconnect();
+        PhotonNetwork.ConnectUsingSettings();
+    }
 
 
 
     void Update()
     {//this is called everyframe on the mainmenu, so don't overload it :) 
+
+
 
     }
 }
