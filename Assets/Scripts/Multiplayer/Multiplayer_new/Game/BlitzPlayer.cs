@@ -7,6 +7,8 @@ using Photon.Pun;
 
 public class BlitzPlayer : MonoBehaviourPunCallbacks
 {
+
+
     public int score;
     public List<GameObject> hand;
     public List<GameObject> field;
@@ -18,8 +20,10 @@ public class BlitzPlayer : MonoBehaviourPunCallbacks
     public float speed = 1f;
     private Vector3 target;
     private Vector3 position;
+
     void Start()
     {
+        Debug.Log("start-BltizPlayer.cs");
         score = 0;
         if (this.transform.position.x > 0)
         {
@@ -30,8 +34,9 @@ public class BlitzPlayer : MonoBehaviourPunCallbacks
             up = true;
             gameObject.transform.rotation = Quaternion.Euler(0, 0, 180f);
         }
-    }
 
+
+    }
 
 
     public int UpdateScore()
@@ -240,6 +245,9 @@ public class BlitzPlayer : MonoBehaviourPunCallbacks
     {
         return valid;
     }
+
+
+
 
     void Update()
     {
