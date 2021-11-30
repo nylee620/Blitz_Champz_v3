@@ -34,6 +34,16 @@ public class GameTable : MonoBehaviourPun
     public LinkedListNode<BlitzPlayer> currentNode;
     public LinkedList<BlitzPlayer> listBlitzPlayers = new LinkedList<BlitzPlayer>();
 
+    public Text localPlayer;
+    public Text remotePlayer;
+    public GameObject myScore;
+    public GameObject opponentScore;
+    public GameObject myTurnMarker;
+    public GameObject awayTurnMarker;
+    public static BlitzPlayer myGamePlayer;
+    public PhotonView PV;
+
+
     void Start()
     {
 
@@ -42,9 +52,7 @@ public class GameTable : MonoBehaviourPun
         if (IdontHavePhotonPlayerAndIamMasterClient)
         {
             Debug.Log("B");
-
             LinkedList<Photon.Realtime.Player> listPhotonPlayers = new LinkedList<Photon.Realtime.Player>();
-
             foreach (Photon.Realtime.Player p in PhotonNetwork.PlayerList)
             {
                 listPhotonPlayers.AddLast(p);
@@ -125,7 +133,40 @@ public class GameTable : MonoBehaviourPun
             StartCoroutine(Wait_For_Deck());
         }
 
+
+        PV = GetComponent<PhotonView>();
+        AssignViewSpecific();
+
+
     }
+
+    void AssignViewSpecific()
+    {
+        foreach (Player player in PhotonNetwork.PlayerList)
+        {
+            if (player == PhotonNetwork.LocalPlayer)
+            {
+                localPlayer.text = player.NickName;
+
+            }
+            else
+            {
+                remotePlayer.text = player.NickName;
+
+            }
+        }
+    }
+
+    [PunRPC]
+    public void SyncPoints(string myPoints, string opponentPoints) //send both my score and opponents score to opponent. This will keep it synced across the network.
+    {
+        Debug.Log("Syncing points..");
+        myScore.GetComponent<TextMeshProUGUI>().text = opponentPoints; //this looks confusing because at the end of your turn you are passing your score to the oponnents instance
+        opponentScore.GetComponent<TextMeshProUGUI>().text = myPoints; //therefore, when your opponent recieves the call to update the score, what is myScore and opponentScore is switched.
+    }
+
+
+
     [PunRPC]
     void UpdateTable(int a, int b)
     {
@@ -181,21 +222,6 @@ public class GameTable : MonoBehaviourPun
 
     }
 
-    void AssignViewSpecific()
-    {
-        //test
-        foreach (Player player in PhotonNetwork.PlayerList)
-        {
-            if (player == PhotonNetwork.LocalPlayer)
-            {
-               // localPlayer.text = player.NickName;
-            }
-            else
-            {
-               // remotePlayer.text = player.NickName;
-            }
-        }
-    }
 
 
     private void Create_Players()
@@ -264,6 +290,9 @@ public class GameTable : MonoBehaviourPun
     {
         Debug.Log("Turn advanced");
 
+   
+
+        
         Debug.Log($"call synctbale with viewID { currentNode.Value.gameObject.GetComponent<PhotonView>().ViewID} and reversed = {reversed}");
         photonView.RPC("SyncTable", RpcTarget.All, currentNode.Value.gameObject.GetComponent<PhotonView>().ViewID, reversed);
         Debug.Log($"call Advance with target ALL");
@@ -310,16 +339,19 @@ public class GameTable : MonoBehaviourPun
         reversed = !reversed;
     }
 
-
-
-
-
     private void Update_Scores()
     {
 
         p1.text = blitzPlayer1.UpdateScore().ToString();
-
         p2.text = blitzPlayer2.UpdateScore().ToString();
+        if (PhotonNetwork.IsMasterClient == true)
+        {
+            PV.RPC("SyncPoints", RpcTarget.Others, blitzPlayer1.UpdateScore().ToString(), blitzPlayer2.UpdateScore().ToString());
+        }
+        else
+        {
+            PV.RPC("SyncPoints", RpcTarget.Others, blitzPlayer2.UpdateScore().ToString(), blitzPlayer1.UpdateScore().ToString());
+        }
 
 
 
@@ -338,20 +370,16 @@ public class GameTable : MonoBehaviourPun
         if (blitzPlayer1.score >= 21 && !currentBlitzPlayer.StopWin() )
         {
 
-
             Debug.Log("bP1.score>=21 ");
-
             if (PhotonNetwork.IsMasterClient == true)
             {
                 gameVic.SetActive(true);
                 gameVic.GetComponentInChildren<TextMeshProUGUI>().text = "You Won!";
-
             }
             else
             {
                 gameOver.SetActive(true);
                 gameOver.GetComponentInChildren<TextMeshProUGUI>().text = "You Lost";
-
             }
 
 
@@ -386,15 +414,10 @@ public class GameTable : MonoBehaviourPun
 
     }
 
-
-
-
     public void SetReady(bool a)
     {
         ready = a;
     }
-
-
 
 
     void Update()

@@ -28,6 +28,11 @@ TagManager:
   - lobby counter
   - punlobby
   - publicgamecount
+  - server
+  - losesCount
+  - WinsCount
+  - ResetTrackerUserMessage
+  - ResetTrackerConfirmButton
   layers:
   - Default
   - TransparentFX

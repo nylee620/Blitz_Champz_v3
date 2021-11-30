@@ -29,6 +29,9 @@ public class NetworkController : MonoBehaviourPunCallbacks
     {
         Debug.Log("NetworkController_Start.CS");
         ConnectedUsingSettings = PhotonNetwork.ConnectUsingSettings();
+
+        print(PhotonNetwork.CountOfPlayersOnMaster + ": Start Amount of Users In PUN Lobby");
+
         if (ConnectedUsingSettings == false)
         {
             //every connection after the first time connection (Used to handle the already connected status)
@@ -44,6 +47,9 @@ public class NetworkController : MonoBehaviourPunCallbacks
         }
 
 
+
+
+
     }
 
 
@@ -54,11 +60,16 @@ public class NetworkController : MonoBehaviourPunCallbacks
         connectedImage.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
         connectedText.GetComponent<Text>().text = "Connected"; //final output
 
-  
+        TextMeshProUGUI tserv = GameObject.FindWithTag("server").GetComponent<TextMeshProUGUI>();
+        tserv.color = new Color32(0, 255, 0, 255);
+
+        tserv.text = "" + PhotonNetwork.CloudRegion;
+
     }
 
     public override void OnDisconnected(DisconnectCause cause)
     {
+        //    public override void OnDisconnected(DisconnectCause cause)
         connectedImage.GetComponent<Image>().color = new Color32(255, 0, 0, 255);
         connectedText.GetComponent<Text>().text = "Disconnected";
 
@@ -67,7 +78,10 @@ public class NetworkController : MonoBehaviourPunCallbacks
 
     public void ResetPunConnection()
     {
-       
+        TextMeshProUGUI tserv = GameObject.FindWithTag("server").GetComponent<TextMeshProUGUI>();
+        tserv.text = "Locating..";
+        tserv.color = new Color32(255, 0, 0, 255);
+        Debug.Log("NetworkController_ResetPunConnection.CS");
         PhotonNetwork.Disconnect();
         PhotonNetwork.ConnectUsingSettings();
     }
@@ -77,7 +91,25 @@ public class NetworkController : MonoBehaviourPunCallbacks
     void Update()
     {//this is called everyframe on the mainmenu, so don't overload it :) 
 
+        //update connected pun user count
+        TextMeshProUGUI t = GameObject.FindWithTag("punlobby").GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI g = GameObject.FindWithTag("publicgamecount").GetComponent<TextMeshProUGUI>();
+        t.text = "" + PhotonNetwork.CountOfPlayers;
+        t.color = new Color32(0, 255, 0, 255);
 
+        //overall pun user count
+        //update hosted games that are not yet filled
+        //g.text = "" + PhotonNetwork.CountOfRooms; //rooms not yet filled
+        //g.text = "" + PhotonNetwork.CountOfRooms;
+
+        //if game is public, and not yet 2 players, and is being hosted, is it available via quickplay
+        //get a public room, get the player count. If != 2 then add it to the number
+        //      RoomOptions roomOps = new RoomOptions() { IsVisible = true, IsOpen = true, MaxPlayers = 2 }; //if match is public isVisible is true, allowing others to connect to this room
+
+        //  if (RoomOptions.roomOps.isVisable == true){
+
+        //  }
+        //
 
     }
 }
