@@ -26,4 +26,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/singleplayer/SPEndScreenV.unity
+    guid: 08036d7a0e6ea8b4c8fc912957037743
+  - enabled: 1
+    path: Assets/Scenes/singleplayer/SPEndScreenL.unity
+    guid: 528f08a3a9242354f8f82aa0ff197131
+  - enabled: 1
+    path: Assets/Scenes/singleplayer/singleplayer.unity
+    guid: fcb3ed4ce9ce2fb49a540a0c5131591d
   m_configObjects: {}

@@ -28,6 +28,9 @@ TagManager:
   - lobby counter
   - punlobby
   - publicgamecount
+  - server
+  - losesCount
+  - WinsCount
   layers:
   - Default
   - TransparentFX
