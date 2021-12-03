@@ -34,10 +34,23 @@ public class WinsLossTracker : MonoBehaviour
             counter++;
         }
         //update the first start frame of the game with these values:)
+
+ //       TextMeshProUGUI t = GameObject.FindWithTag("losesCount").GetComponent<TextMeshProUGUI>();
+ //       t.text = loses.ToString();
+ //       TextMeshProUGUI w = GameObject.FindWithTag("WinsCount").GetComponent<TextMeshProUGUI>();
+ //       w.text = wins.ToString();
+    }
+    public void frame_update()
+    {
+//        print(getwins());
         TextMeshProUGUI t = GameObject.FindWithTag("losesCount").GetComponent<TextMeshProUGUI>();
-        t.text = loses.ToString();
+        int frame_update_loses = getloses();
+        t.text = frame_update_loses.ToString();
+
+
         TextMeshProUGUI w = GameObject.FindWithTag("WinsCount").GetComponent<TextMeshProUGUI>();
-        w.text = wins.ToString();
+        int frame_update_wins = getwins();
+        w.text = frame_update_wins.ToString();
     }
 
     public int getwins()
