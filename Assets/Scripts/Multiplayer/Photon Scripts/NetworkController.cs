@@ -60,10 +60,10 @@ public class NetworkController : MonoBehaviourPunCallbacks
         connectedImage.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
         connectedText.GetComponent<Text>().text = "Connected"; //final output
 
-        TextMeshProUGUI tserv = GameObject.FindWithTag("server").GetComponent<TextMeshProUGUI>();
-        tserv.color = new Color32(0, 255, 0, 255);
-
-        tserv.text = "" + PhotonNetwork.CloudRegion;
+//        TextMeshProUGUI tserv = GameObject.FindWithTag("server").GetComponent<TextMeshProUGUI>();
+//        tserv.color = new Color32(0, 255, 0, 255);
+//
+//        tserv.text = "" + PhotonNetwork.CloudRegion;
 
     }
 
@@ -78,9 +78,9 @@ public class NetworkController : MonoBehaviourPunCallbacks
 
     public void ResetPunConnection()
     {
-        TextMeshProUGUI tserv = GameObject.FindWithTag("server").GetComponent<TextMeshProUGUI>();
-        tserv.text = "Locating..";
-        tserv.color = new Color32(255, 0, 0, 255);
+//        TextMeshProUGUI tserv = GameObject.FindWithTag("server").GetComponent<TextMeshProUGUI>();
+//        tserv.text = "Locating..";
+//        tserv.color = new Color32(255, 0, 0, 255);
         Debug.Log("NetworkController_ResetPunConnection.CS");
         PhotonNetwork.Disconnect();
         PhotonNetwork.ConnectUsingSettings();
@@ -92,10 +92,10 @@ public class NetworkController : MonoBehaviourPunCallbacks
     {//this is called everyframe on the mainmenu, so don't overload it :) 
 
         //update connected pun user count
-        TextMeshProUGUI t = GameObject.FindWithTag("punlobby").GetComponent<TextMeshProUGUI>();
-        TextMeshProUGUI g = GameObject.FindWithTag("publicgamecount").GetComponent<TextMeshProUGUI>();
-        t.text = "" + PhotonNetwork.CountOfPlayers;
-        t.color = new Color32(0, 255, 0, 255);
+//        TextMeshProUGUI t = GameObject.FindWithTag("punlobby").GetComponent<TextMeshProUGUI>();
+//        TextMeshProUGUI g = GameObject.FindWithTag("publicgamecount").GetComponent<TextMeshProUGUI>();
+//        t.text = "" + PhotonNetwork.CountOfPlayers;
+//        t.color = new Color32(0, 255, 0, 255);
 
         //overall pun user count
         //update hosted games that are not yet filled
