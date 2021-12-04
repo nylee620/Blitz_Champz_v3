@@ -374,12 +374,16 @@ public class GameTable : MonoBehaviourPun
             if (PhotonNetwork.IsMasterClient == true)
             {
                 gameVic.SetActive(true);
-                gameVic.GetComponentInChildren<TextMeshProUGUI>().text = "You Won!";
+                //adding the player name to the lose scene. 
+                //gameVic.GetComponentInChildren<TextMeshProUGUI>().text = "You Won!";
+                gameVic.GetComponentInChildren<TextMeshProUGUI>().text = localPlayer.text+" Won!";
             }
             else
             {
                 gameOver.SetActive(true);
-                gameOver.GetComponentInChildren<TextMeshProUGUI>().text = "You Lost";
+                //adding the player name to the lose scene. 
+                //gameOver.GetComponentInChildren<TextMeshProUGUI>().text = "You Lost";
+                gameOver.GetComponentInChildren<TextMeshProUGUI>().text = localPlayer.text + " Lost!";
             }
 
 
@@ -390,13 +394,15 @@ public class GameTable : MonoBehaviourPun
             if (PhotonNetwork.IsMasterClient == false)
             {
                 gameVic.SetActive(true);
-                gameVic.GetComponentInChildren<TextMeshProUGUI>().text = "You Won!";
+                //gameVic.GetComponentInChildren<TextMeshProUGUI>().text = "You Won!";
+                gameVic.GetComponentInChildren<TextMeshProUGUI>().text = localPlayer.text + " Won!";
             }
             else
             {
                 gameOver.SetActive(true);
-                gameOver.GetComponentInChildren<TextMeshProUGUI>().text = "You Lost";
-
+                //gameOver.GetComponentInChildren<TextMeshProUGUI>().text = "You Lost";
+                //adding the player name to the lose scene. 
+                gameOver.GetComponentInChildren<TextMeshProUGUI>().text = localPlayer.text + " Lost!";
             }
 
         }
