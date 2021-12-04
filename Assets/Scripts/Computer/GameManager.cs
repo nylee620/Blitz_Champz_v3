@@ -157,13 +157,43 @@ public class GameManager : MonoBehaviour
                 
         }
 
+                  /*
+                  deck = new int[]
+                    {
+                        1,1,1,1,
+                        2,2,2,
+                        3,3,3,3,3,3,3,3,3,3,3,
+                        4,4,4,4,4,4,4,4,
+                        5,5,5,5,
+                        6,6,6,6,6,6,6,6,
+                        7,7,7,7,7,7,7,7,
+                        8,8,8,8,8,8,8,8,
+                        9,9,9,9,9,9,
+                        10,10,10,10,10,10,10,
+                        11,11,11,11,11,11,11,11,11,11,11,
+                        12,12,
+                        13,13,13,13,13,13,
+                        14,14,14,14,14,14,
+                        15,15,15,15,15,15,15,15
+                        };
+                         */
+
+
+        int temp;
+        int r1;
+        int r2;
+        for (int i = 0; i < 500; i++)//this is my shuffle system. rolls two numbers and swaps the numbers at those positions. can be run more if it's not random enough.
+        {
+            r1 = Random.Range(0, 100);
+            r2 = Random.Range(0, 100);
+            temp = deck[r1];
+            deck[r1] = deck[r2];
+            deck[r2] = temp;
+
+        }
+
+
         
-
-        var rng = new System.Random();
-        rng.Shuffle(deck);// shuffling function is all the way to the end
-
-
-
     }
 
 
@@ -1114,31 +1144,7 @@ public class GameManager : MonoBehaviour
 
 }
 
-/* The following implementation uses the Fisher-Yates algorithm AKA the Knuth Shuffle.
- * It runs in O(n) time and shuffles in place, so is better performing than the 'sort by random' technique, although it is more lines of code. 
- *
- * To shuffle an array of size n (indices in the range [0..n-1]):
- * if n = 0
- *     do nothing
- * if n > 0
- *     (recursive step) shuffle the first n-1 elements of the array
- *     choose a random index, x, in the range [0..n-1]
- *     swap the element at index n-1 with the element at index x
- */
-static class RandomExtensions
-{
-    public static void Shuffle<T>(this System.Random rng, T[] array)
-    {
-        int n = array.Length;
-        while (n > 1)
-        {
-            int k = rng.Next(n--);
-            T temp = array[n];
-            array[n] = array[k];
-            array[k] = temp;
-        }
-    }
-}
+
 
 
 

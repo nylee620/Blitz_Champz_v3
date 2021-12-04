@@ -370,39 +370,43 @@ public class GameTable : MonoBehaviourPun
         if (blitzPlayer1.score >= 21 && !currentBlitzPlayer.StopWin() )
         {
 
+
             Debug.Log("bP1.score>=21 ");
             if (PhotonNetwork.IsMasterClient == true)
             {
+
                 gameVic.SetActive(true);
-                //adding the player name to the lose scene. 
-                //gameVic.GetComponentInChildren<TextMeshProUGUI>().text = "You Won!";
-                gameVic.GetComponentInChildren<TextMeshProUGUI>().text = localPlayer.text+" Won!";
+                gameVic.GetComponentInChildren<TextMeshProUGUI>().text = localPlayer.text+ " Won!";
             }
             else
             {
+
                 gameOver.SetActive(true);
-                //adding the player name to the lose scene. 
-                //gameOver.GetComponentInChildren<TextMeshProUGUI>().text = "You Lost";
-                gameOver.GetComponentInChildren<TextMeshProUGUI>().text = localPlayer.text + " Lost!";
+                gameOver.GetComponentInChildren<TextMeshProUGUI>().text = localPlayer.text+  " Lost";
             }
 
 
         }
         else if (blitzPlayer2.score >= 21 && !currentBlitzPlayer.StopWin() )
         {
+
             Debug.Log("bP2.score>=21 ");
             if (PhotonNetwork.IsMasterClient == false)
             {
+
                 gameVic.SetActive(true);
-                //gameVic.GetComponentInChildren<TextMeshProUGUI>().text = "You Won!";
+               // gameVic.GetComponentInChildren<TextMeshProUGUI>().text = "You Won!";
                 gameVic.GetComponentInChildren<TextMeshProUGUI>().text = localPlayer.text + " Won!";
+
             }
             else
             {
+
                 gameOver.SetActive(true);
-                //gameOver.GetComponentInChildren<TextMeshProUGUI>().text = "You Lost";
-                //adding the player name to the lose scene. 
-                gameOver.GetComponentInChildren<TextMeshProUGUI>().text = localPlayer.text + " Lost!";
+               // gameOver.GetComponentInChildren<TextMeshProUGUI>().text = "You Lost";
+                gameOver.GetComponentInChildren<TextMeshProUGUI>().text = localPlayer.text + " Lost";
+
+
             }
 
         }
