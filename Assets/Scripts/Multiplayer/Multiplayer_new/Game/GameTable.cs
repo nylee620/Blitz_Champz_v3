@@ -396,7 +396,7 @@ public class GameTable : MonoBehaviourPun
 
                 gameVic.SetActive(true);
                // gameVic.GetComponentInChildren<TextMeshProUGUI>().text = "You Won!";
-                gameVic.GetComponentInChildren<TextMeshProUGUI>().text = localPlayer.text + " Won!";
+                gameVic.GetComponentInChildren<TextMeshProUGUI>().text = localPlayer.text + " is the Blitz Champ!";
 
             }
             else
@@ -404,7 +404,7 @@ public class GameTable : MonoBehaviourPun
 
                 gameOver.SetActive(true);
                // gameOver.GetComponentInChildren<TextMeshProUGUI>().text = "You Lost";
-                gameOver.GetComponentInChildren<TextMeshProUGUI>().text = localPlayer.text + " Lost";
+                gameOver.GetComponentInChildren<TextMeshProUGUI>().text = localPlayer.text + ", get them next time Champ!";
 
 
             }
